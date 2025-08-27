@@ -1,0 +1,17 @@
+POST  http://localhost:8000
+Content-Type: application/json
+
+{
+    "name":"kelvin",
+    "lastName":"abache"
+}
+
+
+###
+GET  http://localhost:8000/user
+Content-Type: application/json
+
+###
+GET  http://localhost:8000/item
+Content-Type: application/json
+
