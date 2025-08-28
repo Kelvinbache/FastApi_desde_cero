@@ -2,18 +2,16 @@ import uvicorn
 
 from fastapi import FastAPI
 
-from routers import items, users
+# from routers import items, users
 from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
 
 
-# #Routes that we are going to give permission to
+# # # #Routes that we are going to give permission to
 origins = {
-    "https://home",
-    # "https://localhost:8000/user",
-    # "https://localhost:8000/item",
+    "http://localhost:8000",
 }
 
 #This is how we create a connection with the cors
@@ -25,10 +23,10 @@ app.add_middleware(
     allow_headers=["*"],)
 
 
-app.include_router(users.router)
-app.include_router(items.router)
+# app.include_router(users.router)
+# app.include_router(items.router)
 
-@app.get("/home")
+@app.get("/")
 def read_root():
     return {"Hello": "World"}
 
